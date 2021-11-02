@@ -1,0 +1,36 @@
+plugins {
+    id 'org.jetbrains.intellij' version '1.2.1'
+    id 'java'
+}
+
+group 'io.github.kaftejiman'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version = '203.7717.56'
+    type = 'IC'
+    pluginName = 'MethodMapper'
+    plugins = ['android', 'java']
+}
+
+patchPluginXml {
+    changeNotes = """"""
+}
+
+runIde {
+    ideDir = file('C:\\Program Files\\Android\\Android Studio\\')
+}
+
+test {
+    useJUnitPlatform()
+}

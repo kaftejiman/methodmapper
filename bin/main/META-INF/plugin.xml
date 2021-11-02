@@ -1,0 +1,29 @@
+<idea-plugin>
+    <id>io.github.kaftejiman.methodmapper</id>
+    <name>Method Mapper</name>
+    <vendor email="@kaftejiman" url="http://kaftejiman.github.io">@kaftejiman</vendor>
+
+    <description><![CDATA[
+    A simple plugin that exports a list of the existing java methods in the solution for later use in JEB.
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+
+    <depends>org.jetbrains.android</depends>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.modules.lang</depends>
+
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <action id="PsiNavigationDemoAction" class="io.github.kaftejiman.ExportAction"
+                text="Export Methods" description="Exports all method signatures">
+            <add-to-group group-id="FileExportGroup" anchor="first"/>
+        </action>
+    </actions>
+</idea-plugin>
